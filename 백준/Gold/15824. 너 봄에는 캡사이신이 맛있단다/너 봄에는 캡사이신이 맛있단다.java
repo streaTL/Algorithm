@@ -12,12 +12,16 @@ public class Main {
         int a = Integer.parseInt(st.nextToken());
         int[] arr = new int[a];
         st=new StringTokenizer(br.readLine());
+        long sum=0;
         for(int i=0;i<a;i++){
             arr[i]=Integer.parseInt(st.nextToken());
+            sum+=arr[i];
         }
 
         Arrays.sort(arr);
         long t=arr[a-1]-arr[0];
+        long z=t;
+        long f=2;
         if(a==1){
             System.out.println(0);
             return;
@@ -27,26 +31,20 @@ public class Main {
             return;
         }
         else{
-            for(int i=2;i<a;i++){
-                int x=0;
-                int y=x+i;
-                long z=0;
-                while(y<a){
-                    z+=arr[y];
-                    z-=arr[x];
-                    x++;
-                    y++;
-                }
-                if(z>1000000007)
-                    z=z%1000000007;
-                for(int j=0;j<i-1;j++){
-                    z*=2;
-                    if(z>1000000007)
-                        z=z%1000000007;
-                }
-                t+=z;
+            for(int i=1;i<a;i++){
+                z+=arr[a-i-1];
+                z-=arr[i];
+                z=z%1000000007;
+                long c=z;
+                c=c*f;
+                c=c%1000000007;
+                f*=2;
+                f=f%1000000007;
+                t+=c;
             }
             t=t%1000000007;
+            if(t<0)
+                t+=1000000007;
             System.out.println(t);
         }
     }

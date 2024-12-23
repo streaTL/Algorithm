@@ -8,25 +8,22 @@ public class Main {
         int a = Integer.parseInt(br.readLine());
         int b = Integer.parseInt(br.readLine());
         String s = br.readLine();
-        String s1="";
-        int c=2*a+1;
         int res=0;
         for(int i=0;i<b;i++){
-            s1+=s.charAt(i);
-            if(s1.length()==1&&s1.charAt(0)=='O')
-                s1="";
-            else if(s1.length()==1&&s1.charAt(0)=='I')
-                s1="I";
-            else if(s1.charAt(s1.length()-2)==s1.charAt(s1.length()-1)){
-                if(s1.charAt(s1.length()-1)=='O')
-                    s1="";
-                else s1="I";
-            }
-            else{
-                if(s1.charAt(s1.length()-1)=='I'&&s1.length()==c){
-                    s1=s1.substring(2);
-                    res++;
+            int x=0;
+            if(s.charAt(i)=='I'){
+                for(int j=i+1;j<b-1;j+=2){
+                    if(s.charAt(j)=='O'&&s.charAt(j+1)=='I'){
+                        x++;
+                    }
+                    else{
+                        i=j-1;
+                        break;
+                    }
+                    i=j;
                 }
+                if(x-a>=0)
+                    res+=x-a+1;
             }
         }
         System.out.println(res);

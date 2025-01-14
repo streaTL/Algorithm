@@ -29,14 +29,8 @@ public class Main {
                     }
                     else right=mid;
                 }
-//                if(arr[i]>ar.get(right)){
-//                    ar.remove(right+1);
-//                    ar.add(right+1,arr[i]);
-//                }
-//                else{
-                    ar.remove(right);
-                    ar.add(right,arr[i]);
-//                }
+                ar.remove(left);
+                ar.add(left,arr[i]);
             }
         }
         System.out.println(a-ar.size());

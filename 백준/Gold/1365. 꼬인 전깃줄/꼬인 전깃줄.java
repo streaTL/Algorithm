@@ -20,7 +20,6 @@ public class Main {
             if(arr[i]>ar.get(ar.size()-1))
                 ar.add(arr[i]);
             else{
-//                int x = ar.size();
                 int left=0;
                 int right=ar.size();
                 while(left<right){
@@ -30,24 +29,13 @@ public class Main {
                     }
                     else right=mid;
                 }
-                if(arr[i]>ar.get(right)){
-                    ar.remove(right+1);
-                    ar.add(right+1,arr[i]);
-                }
-                else{
+//                if(arr[i]>ar.get(right)){
+//                    ar.remove(right+1);
+//                    ar.add(right+1,arr[i]);
+//                }
+//                else{
                     ar.remove(right);
                     ar.add(right,arr[i]);
-                }
-//                for(int j=x-2;j>=0;j--){
-//                    if(arr[i]>ar.get(j)){
-//                        ar.remove(j);
-//                        ar.add(j,arr[i]);
-//                        break;
-//                    }
-//                    if(j==0){
-//                        ar.remove(0);
-//                        ar.add(0,arr[i]);
-//                    }
 //                }
             }
         }

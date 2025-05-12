@@ -1,13 +1,13 @@
 class Solution {
     public int solution(int[] money) {
-        if(money.length==3){
-            if(money[0]>=money[1]&&money[0]>=money[2])
-                return money[0];
-            else if(money[1]>=money[0]&&money[1]>=money[2])
-                return money[1];
-            else if(money[2]>=money[0]&&money[2]>=money[1])
-                return money[2];
-        }
+        // if(money.length==3){
+        //     if(money[0]>=money[1]&&money[0]>=money[2])
+        //         return money[0];
+        //     else if(money[1]>=money[0]&&money[1]>=money[2])
+        //         return money[1];
+        //     else if(money[2]>=money[0]&&money[2]>=money[1])
+        //         return money[2];
+        // }
         int[] dp1 = new int[money.length];
         int[] dp2 = new int[money.length];
         dp1[0]=money[0];

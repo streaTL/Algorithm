@@ -20,7 +20,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         int y=0;
         int e = K-1;
-        int sum=0;
+        long sum=0;
         if(e<N-1){
             for(int i=0;i<=e;i++){
                 sum+=arr[i];
@@ -64,8 +64,15 @@ public class Main {
                 }
             }
             else{
-                for(int i=0;i<=x;i++){
-                    sb.append(sum+"\n");
+                if(y==0){
+                    for(int i=0;i<x;i++){
+                        sb.append(sum+"\n");
+                    }
+                }
+                else{
+                    for(int i=0;i<=x;i++){
+                        sb.append(sum+"\n");
+                    }
                 }
                 break;
             }
